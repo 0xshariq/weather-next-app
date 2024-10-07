@@ -2,26 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body{
+    bg-color: grey;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.weather-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  
+  @media (max-width: 768px) {
+    .weather-container {
+      width: 90vw;
+      height: auto;
+    }
+  
+    .weather-container form {
+      width: 100%;
+    }
+  
+    .weather-container input,
+    .weather-container button {
+      width: 100%;
+      margin: 5px 0;
+    }
+  
+    .weather-info {
+      flex-direction: column;
+      text-align: center;
+    }
   }
-}
+  
